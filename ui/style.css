@@ -38,9 +38,10 @@ body {
 }
 .jumbotron p
 {
-    color:lightseagreen;
+    color:darkred;
 }
-.navbar-header
+
+.navbar-brand
 {
-    padding-top:10px;
+    padding-top: 0px;
 }
