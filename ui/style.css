@@ -34,6 +34,7 @@ body {
     background-color:aliceblue;
     color: darkmagenta;
     text-align: center;
+    margin-top:50px;
     
 }
 .jumbotron p
@@ -50,4 +51,6 @@ body {
 {
     margin-top: 50px;
     margin-left: 45%;
+    padding-bottom: 100px;
+
 }
