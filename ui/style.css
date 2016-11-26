@@ -79,3 +79,7 @@ body {
   .modal-footer {
       background-color: #f9f9f9;
   }
+  .modal-body
+  {
+      padding:40px 50px;
+  }
