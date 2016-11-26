@@ -73,6 +73,7 @@ body {
 #log,#reg
 {
     width:50%;
+    margin:auto;
 }
 .modal-header, h4, .close {
       background-color: #5cb85c;
