@@ -75,6 +75,10 @@ body {
     width:50%;
     margin:auto;
 }
+.modal
+{
+    margin-top:5%;
+}
 .modal-header, h4, .close {
       background-color: #5cb85c;
       color:white !important;
