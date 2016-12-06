@@ -8,7 +8,7 @@ var config = {
     host : 'sarathcg@ssh.imad.hasura-app.io',
     port : '5432',
     database : 'sarathcg',
-    password : db-sarathcg-84182,
+    password : 'db-sarathcg-84182'
 };
 
 var pool= new Pool(config);
