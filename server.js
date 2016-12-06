@@ -30,7 +30,7 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/testdb',function (req, res){
+/*app.get('/testdb',function (req, res){
    pool.query('SELECT * FROM user',function(err,result){
        if(err)
        {
@@ -42,7 +42,7 @@ app.get('/testdb',function (req, res){
        }
    }) ;
 });
-
+*/
 var pool= new Pool(config);
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
