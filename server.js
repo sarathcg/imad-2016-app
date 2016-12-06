@@ -13,16 +13,7 @@ var config = {
 
 var pool= new Pool(config);
 
-app.get('/testdb',function (req, res){
-   pool.query("select * from users",function(err,result){
-       if(err)
-       {
-           res.status(500).send(err.toString());
-       }
-       else
-            res.send(JSON.stringify(result));
-   }) ;
-});
+
 
 var app = express();
 app.use(morgan('combined'));
@@ -37,6 +28,17 @@ app.get('/ui/style.css', function (req, res) {
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+});
+
+app.get('/testdb',function (req, res){
+   pool.query("select * from users",function(err,result){
+       if(err)
+       {
+           res.status(500).send(err.toString());
+       }
+       else
+            res.send(JSON.stringify(result));
+   }) ;
 });
 
 
