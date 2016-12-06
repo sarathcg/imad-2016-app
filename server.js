@@ -31,7 +31,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 app.get('/testdb',function (req, res){
-   pool.query("select * from user",function(err,result){
+   pool.query('SELECT * FROM user',function(err,result){
        if(err)
        {
            res.status(500).send(err.toString());
