@@ -8,7 +8,7 @@ var config = {
     host : 'sarathcg@ssh.imad.hasura-app.io',
     port : '5432',
     database : 'sarathcg',
-    password : 'db-sarathcg-84182'
+    password : 'db-sarathcg-84182',
 };
 
 var pool= new Pool(config);
@@ -31,7 +31,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 app.get('/testdb',function (req, res){
-   pool.query("select * from users",function(err,result){
+   pool.query("select * from user",function(err,result){
        if(err)
        {
            res.status(500).send(err.toString());
