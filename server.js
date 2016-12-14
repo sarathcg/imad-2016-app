@@ -86,10 +86,10 @@ app.post('/create-user', function (req, res) {
        //return;
    }
   // if(!/^[a-zA-Z0-9_#.]+$/.test(username))
-          {
+     //     {
             //If username contains other than a-z,A-Z,0-9 then true.
             //res.status(400).send('Your username contains special characters other than _#.');
-          }
+       //   }
     else{
           //Accept username and process
    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
