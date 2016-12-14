@@ -17,6 +17,9 @@ reg.onclick() = function()
          
         var username = document.getElementById('u2').value;
         var password = document.getElementById('p2').value;
+        console.log(username);
+        console.log(password);
+
         if (username.trim() === '' || password.trim() === '') {
         alert("Username/Password field can't be left empty");
         return;
