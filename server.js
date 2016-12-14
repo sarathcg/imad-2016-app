@@ -3,6 +3,9 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
+var bodyParser = require('body-parser');
+var session = require('express-session');
+
 
 var config = {
     user : 'sarathcg',
@@ -71,6 +74,33 @@ function hash(input,salt)
 app.get('/hash/:input', function (req, res) {
     var hashedstring = hash(req.params.input,'this-is-some-random-string');
   res.send(hashedstring);
+});
+
+app.post('/create-user', function (req, res) {
+   var username = req.body.username;
+   var password = req.body.password;
+   var salt = crypto.randomBytes(128).toString('hex');
+   var dbString = hash(password, salt);
+   if(username.trim()===''||password.trim()===''){
+       alert("Username/password cannot be blank");
+       //return;
+   }
+  // if(!/^[a-zA-Z0-9_#.]+$/.test(username))
+          {
+            //If username contains other than a-z,A-Z,0-9 then true.
+            //res.status(400).send('Your username contains special characters other than _#.');
+          }
+    else{
+          //Accept username and process
+   pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send('User successfully created: ' + username);
+      }
+   });
+         }
+   
 });
 
 app.get('/ui/style.css', function (req, res) {
