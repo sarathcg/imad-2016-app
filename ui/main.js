@@ -1,6 +1,6 @@
 console.log('Loaded!');
 var reg=document.getElementById('reg');
-reg.onclick() = function()
+reg.onclick = function()
 {
      var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
