@@ -30,7 +30,4 @@ reg.onclick() = function()
         reg.value = 'Registering...';
     };
 
-}
-};
-}
 
