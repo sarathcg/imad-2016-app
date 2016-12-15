@@ -35,13 +35,17 @@ log.onclick = function()
      var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
           if (request.readyState === XMLHttpRequest.DONE) {
-              if (request.status === 200) {
-                  alert('Successfully logged in');
-                  log.innerHTML = 'logged!';
+             if (request.status === 200) {
+                  log.innerHTML  = 'Sucess!';
+              } else if (request.status === 403) {
+                  log.innerHTML  = 'Invalid credentials. Try again?';
+              } else if (request.status === 500) {
+                  alert('Something went wrong on the server');
+                 log.innerHTML  = 'Login';
               } else {
-                  alert('Could not register the user');
-                  log.innerHTML = 'Log In';
-              }
+                  alert('Something went wrong on the server');
+                  log.innerHTML = 'Login';
+}
           }
         };
          
