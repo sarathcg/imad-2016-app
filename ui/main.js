@@ -77,6 +77,7 @@ function loadLoggedInUser(username)
     user.style['display']='block';
    user.innerHTML = $(username);
    logout.style['display']='block';
+   
     
 }
 function loadLogin () {
