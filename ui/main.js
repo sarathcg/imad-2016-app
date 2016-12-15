@@ -1,5 +1,6 @@
 console.log('Loaded!');
 var reg=document.getElementById('reg');
+reg.value="r";
 reg.onclick = function()
 {
      var request = new XMLHttpRequest();
