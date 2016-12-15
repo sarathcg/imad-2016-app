@@ -8,7 +8,7 @@ reg.onclick = function()
           if (request.readyState === XMLHttpRequest.DONE) {
               if (request.status === 200) {
                   alert('User created successfully');
-                  reg.value = 'Registered!';
+                  reg.innerHTML = 'Registered!';
               } else {
                   alert('Could not register the user');
                   reg.value = 'Register';
