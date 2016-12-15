@@ -71,3 +71,27 @@ user.style['display']='none';
 
 var logout = document.getElementById('logout');
 logout.style['display']='none';
+
+function loadLoggedInUser(username)
+{
+    user.style['display']='block';
+   user.innerHTML = $(username);
+   logout.style['display']='block';
+    
+}
+function loadLogin () {
+    // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                loadLoggedInUser(this.responseText);
+            } else {
+            
+            }
+        }
+    };
+     request.open('GET', '/check-login', true);
+    request.send(null);
+}
+
