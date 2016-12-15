@@ -24,7 +24,7 @@ reg.onclick = function()
         alert("Username/Password field can't be left empty");
         return;
     }
-        request.open('POST', 'http://sarathcg.imad.hasura-app.io/', true);
+        request.open('POST', 'http://sarathcg.imad.hasura-app.io/create-user', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
         reg.value = 'Registering...';
