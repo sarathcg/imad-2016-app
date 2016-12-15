@@ -68,5 +68,5 @@ log.onclick = function()
 var user = document.getElementById('user');
 user.style['display']='none';
 
-var logout = document.getElementById('user');
+var logout = document.getElementById('logout');
 logout.style['display']='none';
