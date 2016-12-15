@@ -11,7 +11,7 @@ reg.onclick = function()
                   reg.innerHTML = 'Registered!';
               } else {
                   alert('Could not register the user');
-                  reg.value = 'Register';
+                  reg.innerHTML = 'Register';
               }
           }
         };
@@ -29,7 +29,7 @@ reg.onclick = function()
         request.open('POST', 'http://sarathcg.imad.hasura-app.io/create-user', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
-        reg.value = 'Registering...';
+        reg.innerHTML = 'Registering...';
 };
 
 
