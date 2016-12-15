@@ -65,3 +65,5 @@ log.onclick = function()
         log.innerHTML = 'logging in...';
 };
 
+var user = document.getElementById('user');
+user.style['display']='none';
