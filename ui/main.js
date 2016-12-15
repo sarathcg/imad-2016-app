@@ -45,8 +45,8 @@ log.onclick = function()
           }
         };
          
-        var username = document.getElementById('u2').value;
-        var password = document.getElementById('p2').value;
+        var username = document.getElementById('u').value;
+        var password = document.getElementById('p').value;
         console.log(username);
         console.log(password);
        
