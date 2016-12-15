@@ -37,6 +37,7 @@ log.onclick = function()
           if (request.readyState === XMLHttpRequest.DONE) {
              if (request.status === 200) {
                   log.innerHTML  = 'Sucess!';
+                  
               } else if (request.status === 403) {
                   log.innerHTML  = 'Invalid credentials. Try again?';
               } else if (request.status === 500) {
