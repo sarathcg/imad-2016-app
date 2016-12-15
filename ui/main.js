@@ -7,10 +7,10 @@ reg.onclick = function()
           if (request.readyState === XMLHttpRequest.DONE) {
               if (request.status === 200) {
                   alert('User created successfully');
-                  register.value = 'Registered!';
+                  reg.value = 'Registered!';
               } else {
                   alert('Could not register the user');
-                  register.value = 'Register';
+                  reg.value = 'Register';
               }
           }
         };
@@ -24,7 +24,7 @@ reg.onclick = function()
         alert("Username/Password field can't be left empty");
         return;
     }
-        request.open('POST', '/create-user', true);
+        request.open('POST', 'http://sarathcg.imad.hasura-app.io/', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
         reg.value = 'Registering...';
