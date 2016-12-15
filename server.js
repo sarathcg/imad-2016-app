@@ -20,6 +20,11 @@ var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 
+app.use(session({
+    secret: 'someRandomSecretValue',
+    cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
+}));
+
  function createTemplate (data) {
      var title = data.title;
      var date = data.date;
@@ -124,6 +129,9 @@ app.post('/login', function (req, res) {
               var hashedPassword = hash(password,salt);
               if(hashedPassword === dbString)
               {
+                   // Set the session
+                req.session.auth = {userId: result.rows[0].id};
+                    // set cookie with a session id
                   res.send('Credentials are correct!');
               }
               else
@@ -134,8 +142,22 @@ app.post('/login', function (req, res) {
           }
       }
    });
-         });
-   
+});
+
+app.get('/check-login', function (req, res) {
+   if (req.session && req.session.auth && req.session.auth.userId) {
+       // Load the user object
+       pool.query('SELECT * FROM "user" WHERE id = $1', [req.session.auth.userId], function (err, result) {
+           if (err) {
+              res.status(500).send(err.toString());
+           } else {
+              res.send(result.rows[0].username);    
+           }
+       });
+   } else {
+       res.status(400).send('You are not logged in');
+   }
+});   
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
