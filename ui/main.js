@@ -100,3 +100,19 @@ function loadLogin () {
     request.send(null);
 }
 
+logout.onclick = function()
+{
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                console.log(this.responseText);
+                alert("Successfully logged out");
+            } else {
+                alert("error");
+            }
+        }
+    };
+     request.open('GET', '/logout', true);
+    request.send(null);
+};
