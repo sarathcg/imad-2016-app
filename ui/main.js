@@ -78,7 +78,7 @@ function loadLoggedInUser(username)
     user.style.display='block';
     user.style.marginTop='16px';
  //   var logout = document.getElementById('logout');
-   user.innerHTML = '<b> '+username+' </b>';
+   user.innerHTML = '<b>'+username+' </b>';
    logout.style.display='block';
    
     
