@@ -77,7 +77,7 @@ function loadLoggedInUser(username)
     var user = document.getElementById('user');
     user.style.display='block';
     var logout = document.getElementById('logout');
-   user.innerHTML = <i>."Hi ".${username}.</i>;
+   user.innerHTML = '<i>Hi ${username}</i>';
    logout.style.display='block';
    
     
