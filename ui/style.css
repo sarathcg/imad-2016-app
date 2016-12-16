@@ -43,6 +43,10 @@ body {
     padding-top:10px;
     color:darkred;
 }
+.jumbotron h1
+{
+font-size: 400%;    
+}
 
 .navbar-brand
 {
