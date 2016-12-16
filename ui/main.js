@@ -67,18 +67,18 @@ log.onclick = function()
 };
 
 var user = document.getElementById('user');
-user.style['display']='none';
+user.style.display='none';
 
 var logout = document.getElementById('logout');
-logout.style['display']='none';
+logout.style.display='none';
 
 function loadLoggedInUser(username)
 {
     var user = document.getElementById('user');
-    user.style['display']='block';
+    user.style.display='block';
     var logout = document.getElementById('logout');
    user.innerHTML = $(username);
-   logout.style['display']='block';
+   logout.style.display='block';
    
     
 }
